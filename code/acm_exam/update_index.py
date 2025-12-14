@@ -189,11 +189,13 @@ def generate_index_content(categories):
         if categories[category]:
             content += f"## {category_name}\n\n"
             for problem in categories[category]:
-                content += f"### [{problem['title']}]({problem['problem_path']})\n"
+                problem_path_str = problem['problem_path'].as_posix()
+                content += f"### [{problem['title']}]({problem_path_str})\n"
                 
                 if problem['solutions']:
                     for lang, num, desc, path in problem['solutions']:
-                        content += f"- [{lang} {desc}]({path})\n"
+                        path_str = path.as_posix()
+                        content += f"- [{lang} {desc}]({path_str})\n"
                 else:
                     content += "*暂无解法*\n"
                 
