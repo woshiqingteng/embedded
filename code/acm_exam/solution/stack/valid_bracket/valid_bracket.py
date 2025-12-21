@@ -1,33 +1,38 @@
 """
 @brief 栈
+
+思路：
+    左括号：入栈
+    右括号：栈为空，返回 False；栈不为空，弹出栈顶，如果不匹配，返回 False
+    栈中剩余左括号没有匹配，返回 False
 """
 
 import sys
 
-def is_valid(s: str) -> bool:
+def is_valid(s):
     stack = []
-    mapping = {')': '(', ']': '[', '}': '{'}
+    bracket = {"(": ")", "{": "}", "[": "]"}
     
-    for char in s:
-        if char in mapping.values():
-            stack.append(char)
-        elif char in mapping.keys():
-            if not stack or stack[-1] != mapping[char]:
+    for c in s:
+        if c in bracket:
+            stack.append(c)
+        else:
+            if not stack:
                 return False
-            stack.pop()
+            else:
+                top = stack.pop()
+                if bracket[top] != c:
+                    return False
     
     return not stack
 
 def main():
-    # read
     data = sys.stdin.read().splitlines()
     n = int(data[0])
-    s = [data[i].strip() for i in range(1, n+1)]
+    a = [data[i].strip() for i in range(1, n+1)]
     
-    # output
-    for string in s:
-        result = is_valid(string)
-        print(str(result))
+    for s in a:
+        print(is_valid(s))
 
 if __name__ == "__main__":
     main()

@@ -1,14 +1,20 @@
+""" 
+@brief 几何
+
+思路：
+    解一元二次方程：(x+vx*t)^2 + (y+vy*t)^2 + (z+vz*t)^2 = R^2
+"""
+
 import sys
 import math
 
 def main():
-    # input
     data = sys.stdin.read().splitlines()
     t = int(data[0])
-    array = [list(map(float, data[i].split())) for i in range(1, t+1)]
+    at = [list(map(float, data[i].split())) for i in range(1, t+1)]
 
     for i in range(t):
-        x, y, z, vx, vy, vz, R = array[i]
+        x, y, z, vx, vy, vz, R = at[i]
         a = vx*vx + vy*vy + vz*vz
         b = 2*(x*vx + y*vy + z*vz)
         c = x*x + y*y + z*z - R*R

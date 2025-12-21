@@ -1,24 +1,26 @@
 """
-@brief 数学
+@brief 统计
+
+思路：
+    集合去重
 """
 
 import sys
 
 def main():
-    # read
     data = sys.stdin.read().splitlines()
     n, m = map(int, data[0].split())
-    scores = [list(map(int, data[i].split())) for i in range(1, m+1)]
+    am = [list(map(int, data[i].split())) for i in range(1, m+1)]
     
     bless = [0] * n
-
     for j in range(m):
-        avg = sum(scores[j])/n
+        avg = sum(am[j]) / n
         for i in range(n):
-            if scores[j][i] > avg:
+            if am[j][i] > avg:
                 bless[i] = 1
-
-    print(sum(bless))
+    result = sum(bless)
+    
+    print(result)
 
 if __name__ == "__main__":
     main()

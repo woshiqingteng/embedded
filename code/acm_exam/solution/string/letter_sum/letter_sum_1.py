@@ -1,13 +1,15 @@
 """
-@brief set
+@brief 集合去重
+
+思路：
+    所有字母和减去出现字母和
 """
 
 def main():
-    # input
-    s = str(input().strip())
+    s = input().strip()
     
     total = sum(range(65, 91))
-    appeared = sum(ord(ch) for ch in set(s))
+    appeared = sum(ord(c) for c in set(s))
 
     result = total - appeared
     print(result)

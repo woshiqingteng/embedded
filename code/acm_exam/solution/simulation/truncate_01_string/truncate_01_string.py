@@ -1,29 +1,22 @@
 """ 
 @brief 模拟
+
+思路：
+    单指针遍历字符串，并更新
 """
 
-import sys
-
 def main():
-    # read
-    data = sys.stdin.read().splitlines()
-    s = data[0].strip()
+    s = input().strip()
+    
     n = len(s)
-
     result = []
-    step = 1
-    index = 0
+    d, i = 1, 0
+    while i + d <= n:
+        result.append(int(s[i:i + d], 2))
+        i += d
+        d = (d % 9) + 1
 
-    while index + step <= n:
-        sub = s[index:index + step]
-        decimal = int(sub, 2)
-        result.append(str(decimal))
-
-        index += step
-        step = (step % 9) + 1
-
-    # output
-    print(" ".join(result))
+    print(*result)
 
 if __name__ == "__main__":
     main()

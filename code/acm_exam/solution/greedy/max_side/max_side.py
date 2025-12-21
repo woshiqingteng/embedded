@@ -1,11 +1,13 @@
 """
 @brief 贪心
+
+思路：
+    数组倒序，遍历数组，元素大于等于索引+1，计数 +1
 """
 
 import sys
 
 def main():
-    # read
     data = sys.stdin.read().splitlines()
     n = int(data[0])
     a = list(map(int, data[1].split()))
@@ -19,7 +21,6 @@ def main():
         else:
             break
     
-    # output
     print(count)
 
 if __name__ == "__main__":

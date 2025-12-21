@@ -1,12 +1,14 @@
 """
 @brief eval
+
+思路：
+    遍历字符串，eval 并更新最大值
 """
 
 def main():
-    # input
-    s = str(input().strip())
+    s = input().strip()
+    
     n = len(s)
-
     max_result = float('-inf')
     
     for i in range(n):

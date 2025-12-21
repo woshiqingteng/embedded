@@ -5,16 +5,14 @@
 import sys
 
 def main():
-    # read
     data = sys.stdin.read().splitlines()
-    n, X, Y = map(int, data[0].split())
+    n, x, y = map(int, data[0].split())
     a = list(map(int, data[1].split()))
     
-    px = a.count(X) / n
-    py = a.count(Y) / n
+    px = a.count(x) / n
+    py = a.count(y) / n
     result = 1.0 / (px * py)
-    
-    # output
+
     print(f"{result:.1f}")
 
 if __name__ == "__main__":

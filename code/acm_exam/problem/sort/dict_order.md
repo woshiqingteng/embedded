@@ -2,7 +2,7 @@
 
 [参考-构建字典序最大的可行序列](https://leetcode.cn/problems/construct-the-lexicographically-largest-valid-sequence/description/)
 
-知识点：贪心、冒泡排序*****8
+知识点：排序
 
 已知一个长度为 n 的序列由 1-n 中的数字组成，保证序列中每个元素各不相同，该序列中的数字可以进行如下操作：
 与相邻的数字交换位置，每次交换，两个参与数字各消耗 1 次机会
@@ -21,7 +21,7 @@
 输出：
 3 4 1 2 5
 
-示例 2：  
+示例 2
 输入：  
 6
 1 2 6 5 4 3

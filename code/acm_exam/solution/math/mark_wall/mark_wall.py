@@ -1,18 +1,22 @@
 """ 
 @brief 数学
+
+思路：
+    单条对角线交点数：a + b + 1 - gcd(a, b)
+    两条对角线的共享交点：a 或 b 为偶数
 """
 
 import math
 
 def main():
-    data = input().split()
-    a, b, x, y = map(int, data)
-    d = math.gcd(a, b)
-    line_points = a + b + 1 - d
-    total_points = 2 * line_points
-    if a % 2 == 0 or b % 2 == 0:
-        total_points -= 1
-    print(total_points)
+    a, b, x, y = map(int, input().split())
 
-if __name__ == '__main__':
+    line = a + b + 1 - math.gcd(a, b)
+    total = 2 * line
+    if a % 2 == 0 or b % 2 == 0:
+        total -= 1
+
+    print(total)
+
+if __name__ == "__main__":
     main()

@@ -1,23 +1,25 @@
 """ 
 @brief 贪心
+
+思路：
+    遍历数组，非零计数 +1，并更新最大长度
 """
 
 import sys
 
 def main():
-    # input
     data = sys.stdin.read().splitlines()
     n = int(data[0])
-    arr = list(map(int, data[1].split()))
+    a = list(map(int, data[1].split()))
     
     max_len = 0
-    current= 0
-    for num in arr:
-        if num != 0:
-            current += 1
-            max_len = max(max_len, current)
+    count = 0
+    for x in a:
+        if x != 0:
+            count += 1
+            max_len = max(max_len, count)
         else:
-            current = 0
+            count = 0
     
     print(max_len)
 

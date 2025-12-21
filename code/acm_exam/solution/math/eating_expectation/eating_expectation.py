@@ -1,18 +1,18 @@
 """
 @brief 数学
+
+思路：E[n] = n
 """
 
 import sys
 
 def main():
-    # input
     data = sys.stdin.read().splitlines()
     n = int(data[0])
-    day = [int(data[i]) for i in range(1, n+1)]
+    a = [int(data[i]) for i in range(1, n+1)]
     
-    # solve
     for i in range(n):
-        print(day[i])
+        print(a[i])
 
 if __name__ == "__main__":
     main()

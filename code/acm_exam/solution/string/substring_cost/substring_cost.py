@@ -1,5 +1,8 @@
 """
-@brief 滑动窗口
+@brief 字符串匹配
+
+思路：
+    遍历字符串，更新最小代价
 """
 
 def cost(c1, c2):
@@ -8,23 +11,17 @@ def cost(c1, c2):
     return a + b
 
 def main():
-    # input
-    s = str(input().strip())
-    if n < len(t):
-        print(-1)
-        return
-    
+    s = input().strip()
+
     t = "AcMer"
     n = len(s)
     min_cost = float('inf')
-
     for i in range(n - len(t) + 1):
         current = 0
         for j in range(len(t)):
             current += cost(s[i + j], t[j])
         min_cost = min(min_cost, current)
 
-    # output
     print(min_cost)
 
 if __name__ == "__main__":

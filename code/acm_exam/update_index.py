@@ -10,24 +10,15 @@ from pathlib import Path
 
 # 分类名称映射（英文->中文）
 CATEGORY_MAPPING = {
-    'math': '数学',
-    'stack': '栈',
-    'queue': '队列',
-    'linked-list': '链表',
-    'tree': '树',
-    'graph': '图',
-    'dp': '动态规划',
-    'greedy': '贪心',
-    'backtracking': '回溯',
-    'binary-search': '二分查找',
     'string': '字符串',
-    'array': '数组',
-    'hash': '哈希',
+    'math': '数学',
+    'bit': '位运算',
+    'stack': '栈',
+    'search': '搜索',
     'sort': '排序',
-    'bit-manipulation': '位运算',
-    'two-pointers': '双指针',
-    'simulation': '模拟',
-    'divide-and-rule': '分治'
+    'dp': '动态规划',
+    'greedy': '贪心',  
+    'simulation': '模拟'
 }
 
 # 文件后缀到语言名称的映射

@@ -1,27 +1,23 @@
 """ 
 @brief 贪心
+
+思路：
+    构造奇数数组：奇数添加，偶数-1添加
+    数组求和，和为奇数，结果为和，和为偶数，结果为和减去奇数数组最小值
 """
 
 import sys
 
 def main():
-    # read
     data = sys.stdin.read().splitlines()
     n = int(data[0])
-    arr = list(map(int, data[1].split()))
+    a = list(map(int, data[1].split()))
 
-    odd = []
-    for x in arr:
-        if x % 2 == 1:
-            odd.append(x)
-        else:
-            odd.append(x - 1)
-    
+    odd = [x if x % 2 else x - 1 for x in a]    
     total = sum(odd)
-    if total % 2 == 1:
-        print(total)
-    else:
-        print(total - min(odd))
+    result = total if total % 2 else total - min(odd)
+
+    print(result)
 
 if __name__ == "__main__":
     main()

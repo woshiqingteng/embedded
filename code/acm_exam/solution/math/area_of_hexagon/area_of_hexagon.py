@@ -1,23 +1,22 @@
 """ 
-@brief 数学
+@brief 几何
+
+思路：分割成6个三角形计算面积
 """
 
 import sys
 import math
 
 def main():
-    # input
     data = sys.stdin.read().splitlines()
-    scores = list(map(float, data[0].split()))
-    L = float(data[1])
-        
-    # solve
+    a = list(map(float, data[0].split()))
+    l = float(data[1])
+
     area = 0.0
     for i in range(6):
         j = (i + 1) % 6
-        area += 0.5 * (scores[i]*L/100) * (scores[j]*L/100) * math.sin(math.pi / 3)
-    
-    # output
+        area += 0.5 * (a[i]*l/100) * (a[j]*l/100) * math.sin(math.pi / 3)
+
     print(f"{area:.6f}")
 
 if __name__ == "__main__":

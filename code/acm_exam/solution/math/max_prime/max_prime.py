@@ -1,17 +1,16 @@
 """
 @brief 数学
 
-偶数全部2相加，奇数减1变成偶数，最后一个2，变为3
+思路：
+    n 为偶数：全部2相加
+    n 为奇数：先使用一个3，剩余用2填满，(n-3) // 2 + 1 = (n -1) // 2
+    n // 2
 """
+
 def main():
-    # read
     n = int(input())
-    
-    # solve
-    if n % 2 == 0:
-        print(n // 2)
-    else:
-        print((n - 1) // 2)
+
+    print(n // 2)
 
 if __name__ == "__main__":
     main()

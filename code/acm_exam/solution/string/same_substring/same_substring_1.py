@@ -1,5 +1,8 @@
 """
-@brief list
+@brief 列表
+
+思路：
+    构造字母数组，遍历并更新数组
 """
 
 import sys
@@ -13,7 +16,7 @@ def main():
     i = 0
     while i <= n - k:
         if a[i:i+k] == a[i] * k:
-            count[ord(a[i]) - ord('a')] += 1
+            count[ord(a[i]) - ord("a")] += 1
             i += k
         else:
             i += 1

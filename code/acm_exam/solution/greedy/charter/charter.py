@@ -1,18 +1,21 @@
 """
 @brief 贪心
+
+思路：
+    区间重叠条件：两区间左边界小于右边界
+    顺序读取区间，重叠标志位设为 0，若重叠，重叠标志位设为 1，中断，不重叠，选择数组增加该区间，计数 +1
 """
 
 import sys
 
 def main():
-    # input
     data = sys.stdin.read().splitlines()
-    T = int(data[0])
-    a = [list(map(int, data[i].split())) for i in range(1, T+1)]
+    t = int(data[0])
+    a = [tuple(map(int, data[i].split())) for i in range(1, t+1)]
     
     selected = []
     count = 0
-    for i in range(T):
+    for i in range(t):
         l, r = a[i]
         overlap = False
         for start, end in selected:

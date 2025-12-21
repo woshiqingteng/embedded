@@ -1,5 +1,8 @@
 """
-@brief dict
+@brief 字典
+
+思路：
+    
 """
 
 import sys

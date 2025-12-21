@@ -1,18 +1,20 @@
 """
-@brief 排序
+@brief 数论
+
+思路：
+    遍历数组，相邻差值大于1返回错误
 """
 
 import sys
 
 def main():
-    # input
     data = sys.stdin.read().splitlines()
     n = int(data[0])
-    arr = list(map(int, data[1].split()))
+    a = list(map(int, data[1].split()))
     
-    arr.sort()
+    a.sort()
     for i in range(1, n):
-        if arr[i] - arr[i-1] > 1:
+        if a[i] - a[i-1] > 1:
             print("No")
             return
 

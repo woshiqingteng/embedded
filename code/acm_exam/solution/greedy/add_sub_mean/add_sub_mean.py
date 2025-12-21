@@ -1,26 +1,28 @@
 """ 
 @brief 贪心
+
+思路：
+    数组小于 k 元素提升到 k，记录操作数
+    提升后总和与 n x m 的差值的绝对值
+    两个相加
 """
 
 import sys
 
 def main():
-    # input
     data = sys.stdin.read().splitlines()
     n, m, k = list(map(int, data[0].split()))
-    array = list(map(int, data[1].split()))
+    a = list(map(int, data[1].split()))
 
-    # solve
     count = 0
     total = 0
-    for num in array:
-        count += max(k - num, 0)
-        total += max(num, k)
+    for x in a:
+        count += max(k - x, 0)
+        total += max(x, k)
 
-    count += abs(total - n * m)
+    reuslt = count + abs(total - n * m)
     
-    # output
-    print(count)
+    print(reuslt)
 
 if __name__ == "__main__":
     main()

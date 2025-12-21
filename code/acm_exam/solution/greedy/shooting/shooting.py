@@ -1,23 +1,20 @@
 """
 @brief 贪心
+
+思路：
+    计算周期数、剩余子弹数、每个周期最小时间、剩余子弹数计算最小时间
 """
 
-import sys
-
 def main():
-    # read
-    data = sys.stdin.read().splitlines()
-    n, m, a, b = map(int, data[0].split())
+    n, m, a, b = map(int, input().split())
     
-    count = n // m
-    remain = n % m
+    last = 0
+    count, remain = n // m, n % m
     cycle = min(a+m, m*(b+1))
     if remain > 0:
-        remain = min(a+remain, remain*(b+1))
-    else:
-        remain = 0
+        last = min(a+remain, remain*(b+1))
     
-    total = count * cycle + remain
+    total = count * cycle + last
     print(total)
 
 if __name__ == "__main__":

@@ -2,6 +2,7 @@
 
 知识点：栈
 
+[参考-有效的括号](https://leetcode.cn/problems/valid-parentheses/)
 [参考-有效的括号字符串](https://leetcode.cn/problems/valid-parenthesis-string/description/)
 
 给定一个只包括 '('，')'，'{'，'}'，'['，']' 的字符串 s ，判断字符串是否有效。
@@ -11,7 +12,7 @@
 每个右括号都有一个对应的相同类型的左括号
 给定一个输入，输出是否有效
 
-示例 1：
+示例 1
 输入：
 8
 ()

@@ -1,15 +1,17 @@
 """
-@brief list
+@brief 构造列表
+
+思路：
+    所有字母和减去出现字母和
 """
 
 def main():
-    # input
-    s = str(input().strip())
+    s = input().strip()
     
     appeared = [False] * 26
-    for ch in s:
-        appeared[ord(ch) - ord('A')] = True
-    result = sum(ord('A') + i for i in range(26) if not appeared[i])
+    for c in s:
+        appeared[ord(c) - ord("A")] = True
+    result = sum(ord("A") + i for i in range(26) if not appeared[i])
 
     print(result)
 

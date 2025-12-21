@@ -1,5 +1,8 @@
 """
-@brief 滑动窗口
+@brief 字符串匹配
+
+思路：
+    构造匹配计数函数，遍历每一个字符串
 """
 
 import sys
@@ -16,15 +19,14 @@ def s_count(text, pattern):
     return count
 
 def main():
-    # input
     data = sys.stdin.read().splitlines()
     n = int(data[0])
-    a = str(data[1].strip())
-    b = [str(data[i].strip()) for i in range(2, n+2)]
+    a = data[1].strip()
+    b = [data[i].strip() for i in range(2, n+2)]
     
     total = 0
-    for i in range(n):
-        total += s_count(a, b[i])
+    for c in b:
+        total += s_count(a, c)
     
     print(total)
 

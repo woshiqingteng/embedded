@@ -1,11 +1,13 @@
 """
-@brief manual
+@brief 数论
+
+思路：
+    比较小写字母和 k 大小，计算结果
 """
 
 import sys
 
 def main():
-    # input
     data = sys.stdin.read().splitlines()
     n, k = map(int, data[0].split())
     s = str(data[1].strip())
@@ -17,7 +19,6 @@ def main():
     else:
         result = n - ((k - lower) % 2)
     
-    # output
     print(result)
 
 if __name__ == "__main__":

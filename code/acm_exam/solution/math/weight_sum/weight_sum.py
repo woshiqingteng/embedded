@@ -1,15 +1,14 @@
 """
-@brief 数学
+@brief 数论
+
+思路：
+    数组最大值减去数组最小值
 """
 
-import sys
-
 def main():
-    # input
-    data = sys.stdin.read().splitlines()
-    arr = list(map(int, data[0].split()))
+    a = list(map(int, input().split()))
 
-    result = max(arr) - min(arr)
+    result = max(a) - min(a)
     
     print(result)
 

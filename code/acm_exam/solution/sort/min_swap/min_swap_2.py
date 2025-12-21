@@ -1,5 +1,8 @@
 """
-@brief merge sort
+@brief 归并排序
+
+思路：
+    归并排序减少复杂度
 """
 
 import sys
@@ -27,7 +30,6 @@ def merge_sort(arr):
     return result, a + b + c
 
 def main():
-    # input
     data = sys.stdin.read().splitlines()
     n = int(data[0])
     arr = list(map(int, data[1].split()))

@@ -1,11 +1,14 @@
 """
 @brief DP
+
+思路：
+    构建 DP 数组，并初始化
+    从 1-n 遍历并更新 DP 数组，取 DP 最大值
 """
 
 import sys
 
 def main():
-    # input
     data = sys.stdin.read().splitlines()
     n = int(data[0])
     arr = [tuple(map(int, data[i].split())) for i in range(1, n + 1)]
@@ -19,7 +22,6 @@ def main():
         dp[i][0] = max(dp[i-1][0] + a, dp[i-1][1] + a - prev_d)
         dp[i][1] = max(dp[i-1][0] + c - prev_b, dp[i-1][1] + c)
 
-    # output
     print(max(dp[n-1][0], dp[n-1][1]))
 
 if __name__ == "__main__":
